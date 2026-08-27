@@ -45,7 +45,7 @@ export default defineAgent({
       // emits inline delivery tags (emotion, pacing, non-verbal sounds) that the TTS renders and
       // the transcript never shows. Requires a TTS model that supports markup, such as the Fish
       // Audio model above.
-      expressive: true,
+      expressive: false,
     });
 
     // Start the session, which initializes the voice pipeline and warms up the models
@@ -75,7 +75,7 @@ export default defineAgent({
 
     // Greet the user on joining
     session.generateReply({
-      instructions: 'Introduce yourself as Nova and warmly ask the user what they would like help with.',
+      instructions: 'Say: Hey, I'm Nova. What are you working on?',
     });
   },
 });
