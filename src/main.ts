@@ -24,7 +24,7 @@ export default defineAgent({
       // See all available models as well as voice selections at https://docs.livekit.io/agents/models/tts/
       tts: new inference.TTS({
         model: 'fishaudio/s2.1-pro',
-        voice: 'fa4c9eb3dccc4806b382b40d61c6b10a',
+        voice: '9a9cf47702da476aa4629e2506d4a857',
       }),
 
       turnHandling: {
