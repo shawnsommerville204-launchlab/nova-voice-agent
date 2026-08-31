@@ -32,6 +32,13 @@ export default defineAgent({
     });
 
     console.log('NOVA SESSION ACTIVE');
+
+    await session.generateReply({
+      instructions:
+        'Greet the caller naturally and ask how you can help them today.',
+    });
+
+    console.log('NOVA INITIAL GREETING SENT');
   },
 });
 
