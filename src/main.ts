@@ -26,6 +26,8 @@ export default defineAgent({
       }),
     });
 
+    console.log('NOVA SESSION CREATED');
+
     await session.start({
       agent: createAgent(),
       room: ctx.room,
@@ -34,11 +36,10 @@ export default defineAgent({
     console.log('NOVA SESSION ACTIVE');
 
     await session.generateReply({
-      instructions:
-        'Greet the caller naturally and ask how you can help them today.',
+      instructions: 'Greet the caller naturally and ask what they need help with.',
     });
 
-    console.log('NOVA INITIAL GREETING SENT');
+    console.log('NOVA GREETING REQUESTED');
   },
 });
 
