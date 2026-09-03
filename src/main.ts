@@ -32,10 +32,10 @@ export default defineAgent({
         // directly to predict end of turn. It's built into the SDK (no extra plugin) and
         // AgentSession supplies the required VAD automatically.
         // See more at https://docs.livekit.io/agents/logic/turns/turn-detector/
-        turnDetection: new inference.TurnDetector(),
+        turnDetection: 'stt',
         // Adaptive interruptions use the turn detector to tell a real interruption from a
         // backchannel like "mhm" or "right", so the agent keeps talking through the latter.
-        interruption: { mode: 'adaptive' },
+        interruption: { enabled: false },
         // Allow the LLM to generate a response while waiting for the end of turn
         preemptiveGeneration: { enabled: true },
       },
@@ -44,6 +44,7 @@ export default defineAgent({
       // emits inline delivery tags (emotion, pacing, non-verbal sounds) that the TTS renders and
       // the transcript never shows. Requires a TTS model that supports markup, such as the Fish
       // Audio model above.
+vad: null,
       expressive: false,
     });
 
